@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import moment from "moment";
 
 const initialState = {
   loading: false,
@@ -29,8 +28,8 @@ export const fetchUsers = createAsyncThunk("user/fetchUsers", () => {
         campaignName: "Campaign " + (index + 1),
         budget:
           (budget < 1000 ? budget : `${Math.round(budget / 1000)}K`) + " USD",
-        startDate: /* moment( */ startDate /*).format("DD/MM/YYYY")*/,
-        endDate: /* moment( */ endDate /*).format("DD/MM/YYYY")*/,
+        startDate: startDate,
+        endDate: endDate,
         active: active,
       };
     });
